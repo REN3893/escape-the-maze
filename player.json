@@ -1,0 +1,9 @@
+{
+    "player": {
+        "x": 0,
+        "y": 0,
+        "direction": 1
+    },
+    "moves": 0,
+    "maze_file": "maze.json"
+}
