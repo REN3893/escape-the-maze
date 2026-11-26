@@ -51,6 +51,25 @@ class Player:
         self._name = value
     
 class Map:
-    def __init__(self):
-        self
+    def __init__(self, file_path: str | Path):
+        self.file_path = file_path
+        self.grid
+        
+    def _lode_maze(self) -> list[list[int]]:
+        try:
+            with open(self.file_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Maze not found on {self.file_path}")
+        except json.JSONDecodeError:
+            raise ValueError("Invalid JSON format")
+        
+        if not isinstance(data, dict) or not data:
+            raise ValueError("The JSON is empty")
+        
+        row_keys = list(data.keys())
+        grid = [data[key] for key in row_keys]
+        
+        return grid
+        
         
