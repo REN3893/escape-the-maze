@@ -1,0 +1,10 @@
+{
+    "name": "Noynar",
+    "x": 22,
+    "y": 10,
+    "direction": [
+        0,
+        1
+    ],
+    "moves": 44
+}
