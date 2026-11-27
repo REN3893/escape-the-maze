@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "escape-the-maze"
+version = "1.0.0"
+description = "A terminal maze game"
+requires-python = ">=3.10"
+
+[project.scripts]
+escape-the-maze = "escape_the_maze.cli:main"
+
+[tool.setuptools]
+packages = ["escape_the_maze"]
+
+[tool.setuptools.package-data]
+escape_the_maze = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
